@@ -12,7 +12,7 @@ import syntaxhighlighter.theme.ThemeRDark;
 public class CodeInspector {
 
 	public static void main(String[] args) {
-		File file = new File("E:\\WorkSpace\\week4\\Libraries-JSON-HTTPClient\\Libraries-JSON-HTTPClient\\src\\libraries\\task2\\JToaster.java");
+//		File file = new File("D:\\JavaTraining\\Core-Java-2-master\\week4\\Libraries-JSON-HTTPClient\\Libraries-JSON-HTTPClient\\src\\libraries\\task2\\JToaster.java");
 		SwingUtilities.invokeLater(new Runnable() {
 
 			@Override
@@ -35,7 +35,7 @@ public class CodeInspector {
 				highlighter.setHighlightedLineList(Arrays.asList(23, 24, 25,
 						26, 27, 28));
 				try {
-					highlighter.setContent(file);
+					highlighter.setContent(new File(args[0]));
 				} catch (IOException ex) {
 					Logger.getLogger(CodeInspector.class.getName()).log(
 							Level.SEVERE, null, ex);

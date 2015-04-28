@@ -26,11 +26,13 @@ public class JToaster {
 		toaster.setToasterWidth(900);
 		toaster.setMessageColor(Color.RED);
 		toaster.setBorderColor(Color.DARK_GRAY);
+		toaster.setMargin(200);
 		
 		while(true) {
 			try {
 				toaster.setStep(3);
 				toaster.showToaster("You need to take a few rest!");
+				toaster.setDisplayTime(300000);
 				Thread.sleep(3600000);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
