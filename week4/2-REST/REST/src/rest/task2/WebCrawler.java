@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 
 public class WebCrawler {
 
-	private static List<String> getAllLinks(String content) {
+	public static List<String> getAllLinks(String content) {
         ArrayList<String> resultList = new ArrayList<>();
         String regex = "<a.*?href=\"((?!javascript).*?)\".*?>";
         Pattern pattern = Pattern.compile(regex);
@@ -25,17 +25,17 @@ public class WebCrawler {
         return resultList;
     }
 	
-	public static void main(String[] args) throws IOException {
-			Queue<String> urls = new LinkedList<String>();
-			URL test = new URL("http://ebusiness.free.bg/");
-			BufferedReader br = new BufferedReader(new InputStreamReader(test.openStream()));
-			String input;
-			while ((input = br.readLine()) != null) {
-				System.out.println(input);
-			}
-			br.close();
-			List<String> list = getAllLinks(" ");
-			System.out.println(list);
-	}
+//	public static void main(String[] args) throws IOException {
+//			Queue<String> urls = new LinkedList<String>();
+//			URL test = new URL("http://ebusiness.free.bg/");
+//			BufferedReader br = new BufferedReader(new InputStreamReader(test.openStream()));
+//			String input;
+//			while ((input = br.readLine()) != null) {
+//				System.out.println(input);
+//			}
+//			br.close();
+//			List<String> list = getAllLinks(" ");
+//			System.out.println(list);
+//	}
 
 }
