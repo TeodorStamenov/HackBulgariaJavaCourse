@@ -45,8 +45,8 @@ public class NewsAgregator extends HttpServlet {
 			HttpURLConnection con1 = (HttpURLConnection) url1.openConnection();
 			SyndFeedInput in = new SyndFeedInput();
 			SyndFeed feed = in.build(new XmlReader(con1));
-			List entries = feed.getEntries();
-			Iterator itEntries = entries.iterator();
+			List<?> entries = feed.getEntries();
+			Iterator<?> itEntries = entries.iterator();
 			while (itEntries.hasNext()) {
 	            SyndEntry entry = (SyndEntry) itEntries.next();
 	            writer.append("<a href='" + entry.getLink() + "'>" + entry.getTitle() + "</a>" + "<br/>");

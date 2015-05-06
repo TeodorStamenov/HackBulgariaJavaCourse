@@ -2,7 +2,6 @@ package servlet.task1;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.util.Date;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -30,7 +29,7 @@ public class HelloWorld extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		PrintWriter p = response.getWriter();
-		p.println("<html><body><h1>Hello World</h1></body></html>");
+		p.println("Hello World");
 	}
 
 	/**
