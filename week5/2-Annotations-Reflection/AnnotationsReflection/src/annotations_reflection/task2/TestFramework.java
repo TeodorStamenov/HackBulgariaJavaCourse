@@ -3,13 +3,14 @@ package annotations_reflection.task2;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.util.ArrayList;
 import java.util.List;
 
 public class TestFramework {
 	private Class testClass;
-	private List<Method> before;
-	private List<Method> execute;
-	private List<Method> after;
+	private List<Method> before = new ArrayList<Method>();
+	private List<Method> execute = new ArrayList<Method>();
+	private List<Method> after = new ArrayList<Method>();
 	
 	public <T> TestFramework(Class<T> classForTest) {
 		this.testClass = classForTest;
@@ -23,7 +24,7 @@ public class TestFramework {
 	private void executeMethods() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		for (Method m : after) {
 			Object obj = testClass.newInstance();
-			m.invoke(obj, m);
+			m.invoke(obj);
 		}
 		
 	}
