@@ -22,11 +22,18 @@ public class TestFramework {
 	}
 	
 	private void executeMethods() throws InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
+		for (Method m : before) {
+			Object obj = testClass.newInstance();
+			m.invoke(obj);
+		}
+		for (Method m : execute) {
+			Object obj = testClass.newInstance();
+			m.invoke(obj);
+		}
 		for (Method m : after) {
 			Object obj = testClass.newInstance();
 			m.invoke(obj);
 		}
-		
 	}
 
 	private <T> void setListsAnnotations() {
