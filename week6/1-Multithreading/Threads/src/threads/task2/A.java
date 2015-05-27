@@ -13,7 +13,7 @@ public class A extends Thread {
 			a.offer(i);
 			System.out.println("Offer: " + i);
 			try {
-				A.sleep(1000);
+				A.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}

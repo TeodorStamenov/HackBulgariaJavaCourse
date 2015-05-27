@@ -18,5 +18,4 @@ public class BonusMainMethod {
 			e.printStackTrace();
 		}		
 	}
-
 }

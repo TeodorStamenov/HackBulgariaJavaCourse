@@ -12,7 +12,7 @@ public class B extends Thread {
 		for (int i = 0; i < 5; i++) {
 			System.out.println("Poll: " + b.poll());
 			try {
-				B.sleep(1000);
+				B.sleep(500);
 			} catch (InterruptedException e) {
 				e.printStackTrace();
 			}
